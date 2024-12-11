@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --content-font: "Noto Sans", sans-serif;
+    --title-font: "Noto Serif", serif;
+
+    --background-color: #F5F5F5;
+    --bar-color: #f1f1f1;
+    --text-color: #111111;
+    --primary-color: #FF5A75; /* Màu đỏ hồng nhạt hơn một chút cho tông màu chính */
+    --secondary-primary-color: #FF82B2; /* Màu hồng nhạt hơn cho tông màu phụ */
+    --accent-color: #FF1493; /* Màu hồng nổi bật cho các điểm nhấn */
+    --link-color: #FF007F; /* Màu hồng đậm cho các liên kết */
+    --button-color: #FF1493; /* Màu hồng nổi bật cho các nút bấm */
+    --border-color: #FFA07A; /* Màu cam nhẹ cho các đường viền */
+    --hover-color: #FF6EB4; /* Màu hồng sáng cho hiệu ứng hover */
+
+    --trans-02: all .2s ease;
+    --trans-03: all .3s ease;
+    --trans-04: all .4s ease;
+    --trans-05: all .5s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--content-font);
+    font-size: 16px;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+body.dark {
+    --background-color: #1E1E1E;
+    --text-color: #F5F5F5;
+    --bar-color: #1A1A1A;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color-light);
+}
+
+body.dark a {
+    color: var(--text-color-dark);
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 240px);
+    height: 100%;
+    border: 1px solid;
+    z-index: 1;
+    overflow: auto;
+}
+
+/* SIDE BAR */
+.sidebar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    height: 100%;
+    background-color: var(--bar-color);
+    box-shadow: 1px 0 4px rgba(0, 0, 0, .2);
+    z-index: 1;
+}
+
+.sidebar-header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: max-content;
+    padding: 24px;
+    align-items: center;
+    justify-content: space-around;
+    cursor: default;
+}
+    .sidebar-header .logo {
+        width: auto;
+        height: 48px;
+        object-fit: cover;
+    }
+    .sidebar-header .logo-text {
+        font-family: var(--title-font);
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+.sidebar-nav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0 24px;
+}
+
+.sidebar-nav ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+    .sidebar-nav ul li {
+        width: 100%;
+        height: 48px;
+    }
+        .sidebar-nav ul li a {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            transition: var(--trans-02);
+            cursor: default;
+
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+        .sidebar-nav ul li:hover a {
+            color: var(--hover-color);
+            font-weight: 600;
+        }
+        .sidebar-nav ul li:first-child a {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+            .sidebar-nav ul li a i {
+                margin: 0 16px 0 8px;
+            }
+
+.sidebar-footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: max-content;
+    padding: 24px;
+    align-items: flex-end;
+}
+    .sidebar-footer .dropdown {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 42px;
+        border-radius: 2px;
+        border: 1px solid var(--border-color);
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
+        justify-content: flex-end;
+        cursor: default;
+        transition: var(--trans-05);
+    }
+    .sidebar-footer .dropdown.expand {
+        height: 160px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .2);
+    }
+        .sidebar-footer .dropdown .dropdown-btn {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 40px;
+            background-color: var(--background-color);
+            border-radius: 2px;
+            align-items: center;
+            font-size: 1.15rem;
+            font-weight: 500;
+            transition: var(--trans-03);
+            z-index: 1;
+        }
+        .sidebar-footer .dropdown .dropdown-btn:hover {
+            color: var(--hover-color);
+        }
+            .sidebar-footer .dropdown .dropdown-btn img {
+                width: 40px;
+                height: 40px;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+            }
+            .sidebar-footer .dropdown .dropdown-btn p {
+                display: flex;
+                width: calc(100% - 40px);
+                height: 40px;
+                justify-content: center;
+                align-items: center;
+            }
+        .sidebar-footer .dropdown .dropdown-content {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            bottom: -24px;
+            width: 100%;
+            height: calc(14px + 36px*3);
+            padding: 8px 12px 12px;
+            background-color: var(--bar-color);
+            justify-content: flex-end;
+            transition: all .6s ease;
+            opacity: 0;
+        }
+        .sidebar-footer .dropdown.expand .dropdown-content {
+            bottom: 36px;
+            background-color: var(--background-color);
+            opacity: 1;
+        }
+            .sidebar-footer .dropdown .dropdown-content a {
+                display: none;
+                width: 100%;
+                height: 36px;
+                align-items: center;
+                transition: var(--trans-02);
+                opacity: 0;
+            }
+            .sidebar-footer .dropdown.expand .dropdown-content a {
+                display: flex;
+                opacity: 1;
+            }
+            .sidebar-footer .dropdown .dropdown-content a:hover {
+                color: var(--hover-color);
+            }
+                .sidebar-footer .dropdown .dropdown-content a p {
+                    margin-left: 8px;
+                    margin-bottom: 2px;
+                }
+
+/* END SIDE BAR */
+
+/* TOP BAR */
+
+.topbar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 72px;
+    background-color: var(--bar-color);
+    box-shadow: 4px 1px 4px rgba(0, 0, 0, .2);
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--trans-05);
+}
+
+.topbar-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    height: 100%;
+    padding: 0 24px;
+    justify-content: center;
+    cursor: default;
+}
+    .topbar-left .today {
+        font-family: var(--title-font);
+        font-size: 1.1rem;
+        font-weight: 400;
+        font-style: italic;
+        line-height: 2rem;
+    }
+    .topbar-left .greeting {
+        font-family: var(--title-font);
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 1.6rem;
+    }
+
+.topbar-right {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 66%;
+    height: 100%;
+    padding: 0 24px;
+    align-items: center;
+    justify-content: flex-end;
+}
+    .topbar-right .website-tool {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: max-content;
+        height: max-content;
+        margin: 0 4px;
+        align-items: center;
+    }
+    .topbar-right .website-tool:hover {
+        border-bottom: 1px solid var(--accent-color);
+    }
+        .topbar-right .website-tool .tool-btn {
+            position: relative;
+            display: flex;
+            width: 44px;
+            height: 44px;
+            justify-content: center;
+            align-items: center;
+            transition: var(--trans-05);
+        }
+            .topbar-right .website-tool .tool-btn i {
+                font-size: 1.3rem;
+            }
+
+
+
+/* END TOP BAR */
+
+

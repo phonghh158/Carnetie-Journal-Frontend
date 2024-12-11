@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" href="res/favicon/favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Liên kết với file styles.css trong thư mục css -->
+
+    <title>Carnetie.</title>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img class="logo" alt="logo" src="res/images/logo/logo.png">
+            <p class="logo-text">Carnetie.</p>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="">
+                        <i class='bx bxs-home-heart'></i>
+                        <p>Trang chủ</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class='bx bx-book-heart'></i>
+                        <p>Nhật ký</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class='bx bx-heart-circle'></i>
+                        <p>Cảm xúc</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class='bx bx-calendar-event'></i>
+                        <p>Hành trình</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class='bx bx-calendar-heart'></i>
+                        <p>Ngày kỷ niệm</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="dropdown" id="user-dropdown">
+                <div class="dropdown-content">
+                    <a href="#"><i class='bx bx-user'></i><p>Trang cá nhân</p></a>
+                    <a href="#"><i class='bx bx-cog'></i><p>Cài đặt</p></a>
+                    <a href="#"><i class='bx bx-log-out'></i><p>Đăng xuất</p></a>
+                </div>
+                <div class="dropdown-btn" onclick="dropdownExpand('user-dropdown')">
+                    <img src="res/user/avatar.jpg" alt="user-avatar">
+                    <p class="dropdown-name">Cá nhân</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+    
+    <main class="main-container">
+        <nav class="topbar">
+            <div class="topbar-left">
+                <p class="today"> 2023, July 12 </p>
+                <p class="greeting"> Xin chào, @Username! </p>
+            </div>
+            <div class="topbar-right">
+                <div class="website-tool" id="search">
+                    <div class="tool-btn">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+                <div class="website-tool" id="change-theme">
+                    <div class="tool-btn">
+                        <i class='bx bx-sun'></i>
+                    </div>
+                </div>
+                <div class="website-tool" id="quickly-mood">
+                    <div class="tool-btn">
+                        <i class='bx bx-happy'></i>
+                    </div>
+                </div>
+                <div class="website-tool" id="notify-msg">
+                    <div class="tool-btn">
+                        <i class='bx bx-bell'></i>
+                    </div>
+                </div>
+                <div class="website-tool" id="settings">
+                    <div class="tool-btn">
+                        <i class='bx bx-cog'></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content-container">
+            <button style="width: 200px; height: 100px;"></button>
+        </div>
+    </main>
+
+    <!-- Script -->
+    <script src="js/script.js"></script>
+</body>
+</html>
