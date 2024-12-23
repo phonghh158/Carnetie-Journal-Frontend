@@ -6,6 +6,7 @@
 
     --background-color: #F5F5F5;
     --bar-color: #f1f1f1;
+    --secondary-bar-color: #efefef;
     --text-color: #111111;
     --primary-color: #FF5A75; /* Màu đỏ hồng nhạt hơn một chút cho tông màu chính */
     --secondary-primary-color: #FF82B2; /* Màu hồng nhạt hơn cho tông màu phụ */
@@ -41,10 +42,63 @@ body {
     overflow: hidden;
 }
 
+body.red {
+    --primary-color: #FF4C4C; /* Màu đỏ nhạt hơn một chút cho tông màu chính */
+    --secondary-primary-color: #FF6666; /* Màu đỏ nhạt hơn cho tông màu phụ */
+    --accent-color: #FF0000; /* Màu đỏ nổi bật cho các điểm nhấn */
+    --link-color: #CC0000; /* Màu đỏ đậm cho các liên kết */
+    --button-color: #FF0000; /* Màu đỏ nổi bật cho các nút bấm */
+    --border-color: #FF6347; /* Màu đỏ cam nhẹ cho các đường viền */
+    --hover-color: #FF4500; /* Màu đỏ sáng cho hiệu ứng hover */
+}
+
+body.green {
+    --primary-color: #4CAF50; /* Màu xanh lá cây cho tông màu chính */
+    --secondary-primary-color: #66BB6A; /* Màu xanh lá cây nhạt hơn cho tông màu phụ */
+    --accent-color: #388E3C; /* Màu xanh lá cây đậm cho các điểm nhấn */
+    --link-color: #2E7D32; /* Màu xanh lá cây đậm cho các liên kết */
+    --button-color: #4CAF50; /* Màu xanh lá cây cho các nút bấm */
+    --border-color: #81C784; /* Màu xanh lá cây nhạt cho các đường viền */
+    --hover-color: #66BB6A; /* Màu xanh lá cây sáng cho hiệu ứng hover */
+}
+
+body.blue {
+    --primary-color: #2196F3; /* Màu xanh dương cho tông màu chính */
+    --secondary-primary-color: #64B5F6; /* Màu xanh dương nhạt hơn cho tông màu phụ */
+    --accent-color: #1976D2; /* Màu xanh dương đậm cho các điểm nhấn */
+    --link-color: #0D47A1; /* Màu xanh dương đậm cho các liên kết */
+    --button-color: #2196F3; /* Màu xanh dương cho các nút bấm */
+    --border-color: #90CAF9; /* Màu xanh dương nhạt cho các đường viền */
+    --hover-color: #42A5F5; /* Màu xanh dương sáng cho hiệu ứng hover */
+}
+
+body.pink {
+    --primary-color: #FF5A75; /* Màu đỏ hồng nhạt hơn một chút cho tông màu chính */
+    --secondary-primary-color: #FF82B2; /* Màu hồng nhạt hơn cho tông màu phụ */
+    --accent-color: #FF1493; /* Màu hồng nổi bật cho các điểm nhấn */
+    --link-color: #FF007F; /* Màu hồng đậm cho các liên kết */
+    --button-color: #FF1493; /* Màu hồng nổi bật cho các nút bấm */
+    --border-color: #FFA07A; /* Màu cam nhẹ cho các đường viền */
+    --hover-color: #FF6EB4; /* Màu hồng sáng cho hiệu ứng hover */
+}
+
+body.purple {
+    --primary-color: #9C27B0; /* Màu tím cho tông màu chính */
+    --secondary-primary-color: #BA68C8; /* Màu tím nhạt hơn cho tông màu phụ */
+    --accent-color: #7B1FA2; /* Màu tím đậm cho các điểm nhấn */
+    --link-color: #4A148C; /* Màu tím đậm cho các liên kết */
+    --button-color: #9C27B0; /* Màu tím cho các nút bấm */
+    --border-color: #CE93D8; /* Màu tím nhạt cho các đường viền */
+    --hover-color: #AB47BC; /* Màu tím sáng cho hiệu ứng hover */
+}
+
 body.dark {
-    --background-color: #1E1E1E;
-    --text-color: #F5F5F5;
-    --bar-color: #1A1A1A;
+    --background-color: #121212; /* Màu nền tối */
+    --bar-color: #1E1E1E; /* Màu thanh công cụ tối hơn một chút */
+    --secondary-bar-color: #2C2C2C; /* Màu thanh công cụ phụ tối hơn */
+    --text-color: #E0E0E0; /* Màu chữ sáng */
+    --border-color: #333333; /* Màu viền tối hơn */
+    --hover-color: #3A3A3A; /* Màu khi hover tối hơn */
 }
 
 ul {
@@ -66,7 +120,6 @@ main {
     flex-direction: column;
     width: calc(100% - 240px);
     height: 100%;
-    border: 1px solid;
     z-index: 1;
     overflow: auto;
 }
@@ -81,6 +134,9 @@ main {
     background-color: var(--bar-color);
     box-shadow: 1px 0 4px rgba(0, 0, 0, .2);
     z-index: 1;
+}
+body.dark .sidebar {
+    border: 1px solid var(--border-color);
 }
 
 .sidebar-header {
@@ -170,7 +226,7 @@ main {
         box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
         justify-content: flex-end;
         cursor: default;
-        transition: var(--trans-05);
+        transition: height .475s ease;
     }
     .sidebar-footer .dropdown.expand {
         height: 160px;
@@ -186,7 +242,7 @@ main {
             align-items: center;
             font-size: 1.15rem;
             font-weight: 500;
-            transition: var(--trans-03);
+            transition: color .3s ease;
             z-index: 1;
         }
         .sidebar-footer .dropdown .dropdown-btn:hover {
@@ -257,20 +313,23 @@ main {
     box-shadow: 4px 1px 4px rgba(0, 0, 0, .2);
     justify-content: space-between;
     align-items: center;
-    transition: var(--trans-05);
+}
+body.dark .topbar {
+    border: 1px solid var(--border-color);
 }
 
 .topbar-left {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 33%;
-    height: 100%;
+    width: max-content;
+    height: 100%; 
     padding: 0 24px;
     justify-content: center;
     cursor: default;
 }
     .topbar-left .today {
+        width: max-content;
         font-family: var(--title-font);
         font-size: 1.1rem;
         font-weight: 400;
@@ -278,6 +337,7 @@ main {
         line-height: 2rem;
     }
     .topbar-left .greeting {
+        width: max-content;
         font-family: var(--title-font);
         font-size: 1.3rem;
         font-weight: 400;
@@ -288,36 +348,251 @@ main {
     position: relative;
     display: flex;
     flex-direction: row;
-    width: 66%;
+    width: 100%;
     height: 100%;
-    padding: 0 24px;
+    padding: 0 8px;
     align-items: center;
     justify-content: flex-end;
 }
-    .topbar-right .website-tool {
-        position: relative;
+
+.website-tool {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 48px;
+    height: 48px;
+    padding: 0 4px;
+    margin: 0 8px;
+    background-color: var(--bar-color);
+    border-radius: 999px;
+    justify-content: flex-end;
+    align-items: center;
+    transition: width .5s ease;
+}
+.website-tool.active {
+    padding: 0 2px;
+    width: clamp(360px, 100%, 100%);
+    border: 2px solid var(--border-color);
+    justify-content: flex-end;
+}
+    .website-tool:hover {
+        padding: 0 2px;
+        border: 2px solid var(--border-color);
+    }
+    .website-tool:active {
+        box-shadow: 0 0 4px rgba(0, 0, 0, .5);
+    }
+    .website-tool.active:active {
+        box-shadow: none;
+    }
+
+    .website-tool .tool-container {
+        display: none;
+        width: 0px;
+        height: 0px;
+    }
+    .website-tool.active .tool-container {
         display: flex;
-        flex-direction: row;
-        width: max-content;
-        height: max-content;
-        margin: 0 4px;
+        width: calc(100% - 44px);
+        height: 40px;
+        margin-right: 4px;
+        border-radius: 999px;
         align-items: center;
     }
-    .topbar-right .website-tool:hover {
-        border-bottom: 1px solid var(--accent-color);
+
+    .website-tool .tool-btn {
+        position: relative;
+        display: flex;
+        right: 0px;
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        border-radius: 999px;
+        justify-content: center;
+        align-items: center;
+        transition: var(--trans-05);
+        z-index: 1;
     }
-        .topbar-right .website-tool .tool-btn {
-            position: relative;
+        .tool-btn i {
+            position: absolute;
             display: flex;
-            width: 44px;
-            height: 44px;
+            width: 100%;
+            height: 100%;
             justify-content: center;
             align-items: center;
-            transition: var(--trans-05);
+            font-size: 1.3rem;
+            transition: opacity .3s ease;
         }
-            .topbar-right .website-tool .tool-btn i {
-                font-size: 1.3rem;
-            }
+        .tool-btn i.close {
+            opacity: 0;
+            z-index: -1;
+        }
+
+    .website-tool.active .tool-btn {
+        background-color: var(--border-color);
+    }
+
+        .website-tool.active#search-bar .tool-btn i,
+        .website-tool.active#fast-tracking-mood .tool-btn i,
+        .website-tool.active#notification .tool-btn i {
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .website-tool.active#search-bar .tool-btn i.close,
+        .website-tool.active#fast-tracking-mood .tool-btn i.close,
+        .website-tool.active#notification .tool-btn i.close {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        body.dark .tool-btn i.bx-sun,
+        .tool-btn i.bx-moon {
+            opacity: 0;
+            z-index: -1;
+        }
+        body.dark .tool-btn i.bx-moon,
+        .tool-btn i.bx-sun {
+            opacity: 1;
+            z-index: 1;
+        }
+
+/* Search bar */
+#search-bar .tool-container .icon {
+    display: flex;
+    width: 36px;
+    height: 40px;
+    margin: 2px 4px 0 4px;
+    border-radius: 999px 0 0 999px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+#search-bar .tool-container .search-input {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-family: var(--content-font);
+    font-size: 1rem;
+}
+
+#search-bar .tool-container .search-filter {
+    display: flex;
+    width: clamp(72px, 50%, 240px);
+    height: 100%;
+    padding: 0 4px;
+    margin-left: 12px;
+    border-radius: 999px 0 0 999px;
+    border: 1px solid var(--border-color);
+    font-family: var(--content-font);
+    font-size: 1.025rem;
+    font-weight: 500;
+}
+#search-bar .tool-container .search-filter:focus {
+    outline: none;
+}
+
+#search-bar .tool-container .search-btn {
+    display: flex;
+    width: 160px;
+    height: 40px;
+    background-color: var(--border-color);
+    border-radius: 0 999px 999px 0;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+
+    font-family: var(--content-font);
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+/* Change Theme */
+.website-tool.active#change-theme {
+    width: 490px;
+} 
+
+#change-theme .tool-container #theme-text,
+#change-theme .tool-container #color-text {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    margin: 0 16px;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+#change-theme .tool-container .dark-light-option {
+    position: relative;
+    display: flex;
+    width: 68px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 2px inset var(--border-color);
+    z-index: 1;
+}
+
+#change-theme .tool-container .dark-light-option i {
+    position: absolute;
+    display: flex;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#change-theme .tool-container .dark-light-option i.bx-sun {
+    left: 1px;
+}
+#change-theme .tool-container .dark-light-option i.bx-moon {
+    right: 1px;
+}
+
+#change-theme .tool-container .dark-light-option .switch-button {
+    position: absolute;
+    display: flex;
+    width: 28px;
+    height: 28px;
+    left: 34px;
+    border-radius: 999px;
+    background-color: var(--border-color);
+    transition: var(--trans-03);
+    z-index: 1;
+}
+body.dark #change-theme .tool-container .dark-light-option .switch-button {
+    left: 2px;
+}
+
+#change-theme .tool-container .theme-color-options {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    height: 40px;
+    align-items: center;
+}
+#change-theme .tool-container .theme-color-options .theme-color {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    margin: 0 4px;
+    border-radius: 999px;
+    cursor: pointer;
+}
+#change-theme .tool-container .theme-color-options .theme-color.selected {
+    border: 4px double var(--text-color);
+}
+
+
 
 
 

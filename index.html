@@ -15,12 +15,13 @@
 
     <title>Carnetie.</title>
 </head>
-<body>
+<body class="pink dark">
     <aside class="sidebar">
         <div class="sidebar-header">
             <img class="logo" alt="logo" src="res/images/logo/logo.png">
             <p class="logo-text">Carnetie.</p>
         </div>
+
         <nav class="sidebar-nav">
             <ul>
                 <li>
@@ -55,6 +56,7 @@
                 </li>
             </ul>
         </nav>
+
         <div class="sidebar-footer">
             <div class="dropdown" id="user-dropdown">
                 <div class="dropdown-content">
@@ -73,31 +75,66 @@
     <main class="main-container">
         <nav class="topbar">
             <div class="topbar-left">
-                <p class="today"> 2023, July 12 </p>
-                <p class="greeting"> Xin chào, @Username! </p>
+                <div class="today"> 2023, July 12 </div>
+                <div class="greeting"> Xin chào, @Username! </div>
             </div>
+
             <div class="topbar-right">
-                <div class="website-tool" id="search">
-                    <div class="tool-btn">
+                <div class="website-tool" id="search-bar">
+                    <div class="tool-container">
+                        <i class='bx bx-search icon'></i>
+                        <input type="text" class="search-input" name="search-input" id="search-input" placeholder="Tìm kiếm mọi thứ bạn cần...">
+                        <select class="search-filter" name="search-filter" id="search-filter">
+                            <option value="all">Tất cả</option>
+                            <option value="journal">Nhật ký</option>
+                            <option value="event">Hành trình</option>
+                            <option value="anniversary">Kỷ niệm</option>
+                        </select>
+                        <div class="search-btn">Tìm kiếm</div>
+                    </div>
+                    <div class="tool-btn" onclick="toolExpand('search-bar')">
                         <i class='bx bx-search'></i>
+                        <i class='bx bx-x close'></i>
                     </div>
                 </div>
-                <div class="website-tool" id="change-theme">
-                    <div class="tool-btn">
+                <div class="website-tool active" id="change-theme">
+                    <div class="tool-container">
+                        <p id="theme-text">Giao diện: </p>
+                        <div class="dark-light-option" id="theme-switch" onclick="themeToggle()">
+                            <div class="switch-button"></div>
+                            <i class='bx bx-sun'></i>
+                            <i class='bx bx-moon'></i>
+                        </div>
+                        <p id="color-text">Màu sắc: </p>
+                        <div class="theme-color-options">
+                            <div class="theme-color" id="red" style="background-color: #db190c;" onclick="themeColorChange('red')"></div>
+                            <div class="theme-color" id="green" style="background-color: #72c175;" onclick="themeColorChange('green')"></div>
+                            <div class="theme-color" id="blue" style="background-color: #16b3fd;" onclick="themeColorChange('blue')"></div>
+                            <div class="theme-color selected" id="pink" style="background-color: #f06a97;" onclick="themeColorChange('pink')"></div>
+                            <div class="theme-color" id="purple" style="background-color: #9c27b0;" onclick="themeColorChange('purple')"></div>
+                        </div>
+                    </div>
+                    <div class="tool-btn" onclick="toolExpand('change-theme')">
                         <i class='bx bx-sun'></i>
+                        <i class='bx bx-moon'></i>
                     </div>
                 </div>
-                <div class="website-tool" id="quickly-mood">
-                    <div class="tool-btn">
+                <div class="website-tool" id="fast-tracking-mood">
+                    <div class="tool-container"></div>
+                    <div class="tool-btn" onclick="toolExpand('fast-tracking-mood')">
                         <i class='bx bx-happy'></i>
+                        <i class='bx bx-x close'></i>
                     </div>
                 </div>
-                <div class="website-tool" id="notify-msg">
+                <div class="website-tool" id="notification">
+                    <div class="tool-container"></div>
                     <div class="tool-btn">
                         <i class='bx bx-bell'></i>
+                        <i class='bx bx-x close'></i>
                     </div>
                 </div>
                 <div class="website-tool" id="settings">
+                    <div class="tool-container"></div>
                     <div class="tool-btn">
                         <i class='bx bx-cog'></i>
                     </div>
@@ -106,7 +143,7 @@
         </nav>
 
         <div class="content-container">
-            <button style="width: 200px; height: 100px;"></button>
+            <p id="txt">jjjjj</p>
         </div>
     </main>
 
