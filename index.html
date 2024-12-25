@@ -10,6 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Uicons -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css"> <!-- Liên kết với file styles.css trong thư mục css -->
 
@@ -26,31 +31,31 @@
             <ul>
                 <li>
                     <a href="">
-                        <i class='bx bxs-home-heart'></i>
+                        <i class="fi fi-br-home-heart"></i>
                         <p>Trang chủ</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <i class='bx bx-book-heart'></i>
+                        <i class="fi fi-rr-book-heart"></i>
                         <p>Nhật ký</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <i class='bx bx-heart-circle'></i>
+                        <i class="fi fi-rr-square-heart"></i>
                         <p>Cảm xúc</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <i class='bx bx-calendar-event'></i>
-                        <p>Hành trình</p>
+                        <i class="fi fi-rr-wishlist-heart"></i>
+                        <p>Lịch trình</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <i class='bx bx-calendar-heart'></i>
+                        <i class="fi fi-rr-calendar-heart"></i>
                         <p>Ngày kỷ niệm</p>
                     </a>
                 </li>
@@ -60,9 +65,9 @@
         <div class="sidebar-footer">
             <div class="dropdown" id="user-dropdown">
                 <div class="dropdown-content">
-                    <a href="#"><i class='bx bx-user'></i><p>Trang cá nhân</p></a>
-                    <a href="#"><i class='bx bx-cog'></i><p>Cài đặt</p></a>
-                    <a href="#"><i class='bx bx-log-out'></i><p>Đăng xuất</p></a>
+                    <a href="#"><i class="fi fi-rr-user-volunteer"></i><p>Trang cá nhân</p></a>
+                    <a href="#"><i class="fi fi-rr-admin"></i><p>Cài đặt</p></a>
+                    <a href="#"><i class="fi fi-rr-sign-out-alt"></i><p>Đăng xuất</p></a>
                 </div>
                 <div class="dropdown-btn" onclick="dropdownExpand('user-dropdown')">
                     <img src="res/user/avatar.jpg" alt="user-avatar">
@@ -82,7 +87,7 @@
             <div class="topbar-right">
                 <div class="website-tool" id="search-bar">
                     <div class="tool-container">
-                        <i class='bx bx-search icon'></i>
+                        <i class="fi fi-rr-search-heart icon"></i>
                         <input type="text" class="search-input" name="search-input" id="search-input" placeholder="Tìm kiếm mọi thứ bạn cần...">
                         <select class="search-filter" name="search-filter" id="search-filter">
                             <option value="all">Tất cả</option>
@@ -93,17 +98,17 @@
                         <div class="search-btn">Tìm kiếm</div>
                     </div>
                     <div class="tool-btn" onclick="toolExpand('search-bar')">
-                        <i class='bx bx-search'></i>
-                        <i class='bx bx-x close'></i>
+                        <i class="fi fi-rr-search-heart"></i>
+                        <i class="fi fi-rr-cross-small close"></i>
                     </div>
                 </div>
-                <div class="website-tool active" id="change-theme">
+                <div class="website-tool" id="change-theme">
                     <div class="tool-container">
                         <p id="theme-text">Giao diện: </p>
                         <div class="dark-light-option" id="theme-switch" onclick="themeToggle()">
                             <div class="switch-button"></div>
-                            <i class='bx bx-sun'></i>
-                            <i class='bx bx-moon'></i>
+                            <i class="fi fi-rr-brightness"></i>
+                            <i class="fi fi-rr-moon-stars"></i>
                         </div>
                         <p id="color-text">Màu sắc: </p>
                         <div class="theme-color-options">
@@ -115,35 +120,96 @@
                         </div>
                     </div>
                     <div class="tool-btn" onclick="toolExpand('change-theme')">
-                        <i class='bx bx-sun'></i>
-                        <i class='bx bx-moon'></i>
+                        <i class="fi fi-rr-brightness"></i>
+                        <i class="fi fi-rr-moon-stars"></i>
                     </div>
                 </div>
-                <div class="website-tool" id="fast-tracking-mood">
-                    <div class="tool-container"></div>
+                <div class="website-tool active" id="fast-tracking-mood">
+                    <div class="tool-container">
+                        <div class="mood-option" id="mood-tracking">
+                            <i class="fi fi-rr-mouse-pointer-heart mood-tracking-button"></i>
+                        </div>
+                        <div class="mood-option" id="happy">
+                            <img class="img-outline" src="res/images/emoji/outline/happy.png" alt="happy">
+                            <img class="img-color" src="res/images/emoji/color/happy_1.png" alt="happy">
+                        </div>
+                        <div class="mood-option" id="love">
+                            <img class="img-outline" src="res/images/emoji/outline/kiss_1.png" alt="love">
+                            <img class="img-color" src="res/images/emoji/color/kiss.png" alt="love">
+                        </div>
+                        <div class="mood-option" id="peace">
+                            <img class="img-outline" src="res/images/emoji/outline/peach.png" alt="peace">
+                            <img class="img-color" src="res/images/emoji/color/peach.png" alt="peace">
+                        </div>
+                        <div class="mood-option" id="sadness">
+                            <img class="img-outline" src="res/images/emoji/outline/sad_1.png" alt="sadness">
+                            <img class="img-color" src="res/images/emoji/color/sad_1.png" alt="sadness">
+                        </div>
+                        <div class="mood-option" id="tired">
+                            <img class="img-outline" src="res/images/emoji/outline/tired.png" alt="tired">
+                            <img class="img-color" src="res/images/emoji/color/tired.png" alt="tired">
+                        </div>
+                        <div class="mood-option" id="anxiety">
+                            <img class="img-outline" src="res/images/emoji/outline/anxiety.png" alt="anxiety">
+                            <img class="img-color" src="res/images/emoji/color/anxiety.png" alt="anxiety">
+                        </div>
+                        <div class="mood-option" id="surprise">
+                            <img class="img-outline" src="res/images/emoji/outline/shock.png" alt="surprise">
+                            <img class="img-color" src="res/images/emoji/color/shock.png" alt="surprise">
+                        </div>
+                        <div class="mood-option" id="anger">
+                            <img class="img-outline" src="res/images/emoji/outline/angry.png" alt="anger">
+                            <img class="img-color" src="res/images/emoji/color/angry_1.png" alt="anger">
+                        </div>
+                        <div class="mood-option" id="scared">
+                            <img class="img-outline" src="res/images/emoji/outline/scared.png" alt="scared">
+                            <img class="img-color" src="res/images/emoji/color/scared.png" alt="scared">
+                        </div>
+                    </div>
                     <div class="tool-btn" onclick="toolExpand('fast-tracking-mood')">
-                        <i class='bx bx-happy'></i>
-                        <i class='bx bx-x close'></i>
+                        <i class="fi fi-rr-face-smile-hearts"></i>
+                        <i class="fi fi-rr-cross-small close"></i>
                     </div>
                 </div>
-                <div class="website-tool" id="notification">
-                    <div class="tool-container"></div>
-                    <div class="tool-btn">
-                        <i class='bx bx-bell'></i>
-                        <i class='bx bx-x close'></i>
+                <div class="website-tool active" id="notification">
+                    <div class="tool-container">
+                        <p class="notification-text">Thông báo</p>
+                        <div class="notification-container">
+                            <div class="notification-item unread">
+                                <p class="notification-title">Có người đã thích bài viết của bạn</p>
+                                <p class="notification-time">1 giờ trước</p>
+                            </div>
+                            <div class="notification-item read">
+                                <p class="notification-title">Có người đã thích bài viết của bạn</p>
+                                <p class="notification-time">2 giờ trước</p>
+                            </div>
+                            <div class="notification-item read">
+                                <p class="notification-title">Có người đã thích bài viết của bạn</p>
+                                <p class="notification-time">3 giờ trước</p>
+                            </div>
+                            <div class="notification-item unread">
+                                <p class="notification-title">Có người đã thích bài viết của bạn</p>
+                                <p class="notification-time">3 giờ trước</p>
+                            </div>
+                        </div>
+                        <div class="open-notification">Xem tất cả</div>
+                    </div>
+                    <div class="tool-btn" onclick="toolExpand('notification')">
+                        <i class="fi fi-rr-envelope-heart"></i>
+                        <i class="fi fi-rr-cross-small close"></i>
                     </div>
                 </div>
                 <div class="website-tool" id="settings">
                     <div class="tool-container"></div>
                     <div class="tool-btn">
-                        <i class='bx bx-cog'></i>
+                        <i class="fi fi-rr-settings"></i>
                     </div>
                 </div>
             </div>
         </nav>
 
         <div class="content-container">
-            <p id="txt">jjjjj</p>
+            <p id="txt">Text</p>
         </div>
     </main>
 
